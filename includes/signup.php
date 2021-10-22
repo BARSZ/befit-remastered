@@ -1,10 +1,11 @@
 <?php
 if (isset($_POST['registerButton'])) {
-    include_once 'dbh.php';
+    require_once 'dbh.php';
+    require_once 'functions.php';
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+    $passwordRepeat = $_POST['passwordRepeat'];
     $email = $_POST['email'];
     $name = $_POST['name'];
     $age = $_POST['age'];
@@ -13,21 +14,27 @@ if (isset($_POST['registerButton'])) {
     $startingCredits = 30;
     $membershipExpires = date("Y-m-d");
 
-    if (empty($username) || empty($password) || empty($email) || empty($name) || empty($age) || empty($gender) || empty($dateOfBirth)) {
-        header("Location: ../index.php?signup=empty");
+    if (emptyInputSignUp($username, $password, $email, $name, $age, $gender, $dateOfBirth)) {
+        header("Location: ../signup-page.php?signup=empty");
         exit();
-    } else {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            header("Location: ../index.php?signup=invalidemail&username=$username&name=$name&age=$age&gender=$gender&dateOfBirth=$dateOfBirth");
-            exit();
-        } else {
-            $sql = "INSERT INTO `clients`(`username`, `password`, `email`, `name`, `age`, `gender`, `dateOfBirth`, `credits`, `membershipExpires`) 
-                    VALUES ('$username','$passwordHashed','$email','$name','$age','$gender','$dateOfBirth','$startingCredits','$membershipExpires');";
-            mysqli_query($conn, $sql);
-            header("Location: ../index.php?signup=success");
-            exit();
-        }
     }
+    if (invalidUsername($username)) {
+        header("Location: ../signup-page.php?signup=invalidusername");
+        exit();
+    }
+    if (invalidEmail($email)) {
+        header("Location: ../signup-page.php?signup=invalidemail&username=$username&name=$name&age=$age&gender=$gender&dateOfBirth=$dateOfBirth");
+        exit();
+    }
+    if (passwordDontMatch($password, $passwordRepeat)) {
+        header("Location: ../signup-page.php?signup=passwordsDontMatch");
+        exit();
+    }
+    if (usernameExists($conn, $username, $email)) {
+        header("Location: ../signup-page.php?signup=usernameOrEmailEXIST");
+        exit();
+    }
+    createUser($conn, $username, $password, $email, $name, $age, $gender, $dateOfBirth, $startingCredits, $membershipExpires);
 } else {
     header("Location: ../index.php?signup=error");
     exit();
