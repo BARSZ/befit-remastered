@@ -23,14 +23,7 @@
             <!-- row username -->
             <div class="row">
                 <div class="col text-center">
-                    <?php
-                    if (isset($_GET['username'])) {
-                        $username = $_GET['username'];
-                        echo '<input type="text" name="username" placeholder="Username" value="' . $username . '">';
-                    } else {
-                        echo '<input type="text" name="username" placeholder="Username/E-mail">';
-                    }
-                    ?>
+                    <input type="text" name="username" placeholder="Username/E-mail">
                 </div>
             </div>
             <!-- row pass -->
@@ -54,22 +47,22 @@
             <!-- form ends -->
         </form>
         <?php
-        if (!isset($_GET['signup'])) {
+        if (!isset($_GET['loginButton'])) {
             exit();
         } else {
-            $signupCheck = $_GET['signup'];
+            $signupCheck = $_GET['login'];
 
             if ($signupCheck == "empty") {
                 echo "<p class='error'>You did not fill all fields</p>";
                 exit();
-            } else if ($signupCheck == "invalidemail") {
-                echo "<p class='error'>Invalid E-mail</p>";
+            } else if ($signupCheck == "usernameDoesNotExist") {
+                echo '<script>alert("This username does not exist!")</script>';
                 exit();
-            } else if ($signupCheck == "error") {
-                echo "<p class='error'>You did not press the button.</p>";
+            } else if ($signupCheck == "wrongPassword") {
+                echo '<script>alert("Wrong password!")</script>';
                 exit();
             } else if ($signupCheck == "success") {
-                echo "<p class='success'>You have been signed up.</p>";
+                echo '<script>alert("Logged in successfully!")</script>';
                 exit();
             }
         }

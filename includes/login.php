@@ -7,11 +7,12 @@ if (isset($_POST["loginButton"])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($username) || empty($password)) {
-        header("Location: ../index.php?signup=empty");
+    if (emptyInputLogin($username, $password)) {
+        header("Location: ../index.php?login=empty");
         exit();
-    } else {
     }
+    loginUser($conn, $username, $password);
 } else {
     header("location: ../index.php");
+    exit();
 }

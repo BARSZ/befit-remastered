@@ -68,3 +68,35 @@ function createUser($conn, $username, $password, $email, $name, $age, $gender, $
     mysqli_stmt_close($stmt);
     header("Location: ../index.php?signup=success");
 }
+function emptyInputLogin($username, $password)
+{
+    $result = false;
+    if (empty($username) || empty($password)) {
+        $result = true;
+    }
+    return $result;
+}
+function loginUser($conn, $username, $password)
+{
+    $usernameExists = usernameExists($conn, $username, $username);
+
+    if ($usernameExists === false) {
+        header("Location: ../index.php?login=usernameDoesNotExist");
+        exit();
+    }
+
+    $passwordHashed = $usernameExists["password"];
+    $checkPasswordMatch = password_verify($password, $passwordHashed);
+
+    if ($checkPasswordMatch === false) {
+        header("Location: ../index.php?login=wrongPassword");
+        exit();
+    } else if ($checkPasswordMatch === true) {
+        session_destroy();
+        session_start();
+        $_SESSION["userid"] = $usernameExists["id"];
+        $_SESSION["username"] = $usernameExists["username"];
+        header("Location: ../home-page.php?login=success");
+        exit();
+    }
+}

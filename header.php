@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Price</a></li>
-                <li><a href="#">Profile Page</a></li>
+                <li><a href="#">Profile Page: <?php echo $_SESSION["username"]; ?></a></li>
             </ul>
         </div>
     </nav>

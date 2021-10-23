@@ -124,16 +124,25 @@
             $signupCheck = $_GET['signup'];
 
             if ($signupCheck == "empty") {
-                echo "<p class='error'>You did not fill all fields</p>";
+                echo '<script>alert("You did not fill all fields")</script>';
                 exit();
             } else if ($signupCheck == "invalidemail") {
-                echo "<p class='error'>Invalid E-mail</p>";
+                echo '<script>alert("Invalid E-mail")</script>';
+                exit();
+            } else if ($signupCheck == "invalidusername") {
+                echo '<script>alert("Invalid Username")</script>';
+                exit();
+            } else if ($signupCheck == "passwordsDontMatch") {
+                echo '<script>alert("Passwords do not match")</script>';
+                exit();
+            } else if ($signupCheck == "usernameOrEmailEXIST") {
+                echo '<script>alert("Username or Email already exist")</script>';
                 exit();
             } else if ($signupCheck == "error") {
-                echo "<p class='error'>You did not press the button.</p>";
+                echo '<script>alert("You did not press the button")</script>';
                 exit();
             } else if ($signupCheck == "success") {
-                echo "<p class='success'>You have been signed up.</p>";
+                echo '<script>alert("You have been signed up")</script>';
                 exit();
             }
         }
