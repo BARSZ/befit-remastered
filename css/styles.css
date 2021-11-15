@@ -1,3 +1,6 @@
+legend {
+    all: unset;
+  }
 .signup-body
 {
     background-image: url('../img/logInBackground.jpg');
