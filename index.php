@@ -5,44 +5,33 @@
     <title>BeFit</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body class="signup-body">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <h1 style="color: white;">Log In</h1>
-            </div>
-        </div>
+<body>
+    <div class="center">
+        <h1>Log In</h1>
         <!-- form starts -->
         <form action="includes/login.php" method="POST">
             <!-- row username -->
-            <div class="row">
-                <div class="col text-center">
-                    <input type="text" name="username" placeholder="Username/E-mail">
-                </div>
+            <div class="input">
+                <input type="text" name="username" placeholder=" ">
+                <span></span>
+                <label>Username:</label>
             </div>
             <!-- row pass -->
-            <div class="row">
-                <div class="col text-center">
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-            </div>
-            <!-- row link register -->
-            <div class="row">
-                <div class="col text-center">
-                    <a href="signup-page.php" class="stretched-link">Don't have an account? Click here to Sign Up!</a>
-                </div>
+            <div class="input">
+                <input type="password" name="password" placeholder=" ">
+                <span></span>
+                <label>Password:</label>
             </div>
             <!-- row button -->
-            <div class="row">
-                <div class="col text-center">
-                    <button type="submit" class="btn btn-primary btn-lg" name="loginButton">Log In</button>
-                </div>
+            <div class="login-button">
+                <button type="submit" name="loginButton">Log In</button>
+            </div>
+            <!-- row link register -->
+            <div class="signup-link">
+                Don't have an account? <a href="signup-page.php">Sign Up!</a>
             </div>
             <!-- form ends -->
         </form>
@@ -67,7 +56,6 @@
             }
         }
         ?>
-    </div>
 </body>
 
 </html>

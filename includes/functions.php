@@ -96,6 +96,7 @@ function loginUser($conn, $username, $password)
         session_start();
         $_SESSION["userid"] = $usernameExists["id"];
         $_SESSION["username"] = $usernameExists["username"];
+        $_SESSION["name"] = $usernameExists["name"];
         header("Location: ../home-page.php?login=success");
         exit();
     }
