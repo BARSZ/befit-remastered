@@ -13,7 +13,12 @@
     <header>
         <?php include "header.php" ?>
     </header>
-    <h1>wtf</h1>
+    <div class="homeContent">
+        <h1>BeFit Fitness & Spa</h1>
+        <p>BeFit Fitness & Spa is the largest<br> and most successful chain of fitness clubs in the Netherlands.<br> With its 5 consecutive annual Best Fitness Club honors,<br> 10 ultra modern locations, over 2 highly trained coaches<br> and tens of thousands of club members,<br> BeFit Fitness & Spa is a definite leader in the fitness and wellness industry.<br>
+            But let's leave the numbers further and tell you what BeFit Fitness & Spa really is.</p>
+    </div>
 </body>
+<footer class="footer">All rights reserved (c) 2021 Vasil Simeonov.</footer>
 
 </html>

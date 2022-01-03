@@ -1,4 +1,8 @@
-      <img src="img/mainLogoWhite.png" alt="logo" class="logo">
+      <div class="logo">
+          <a href="home-page.php">
+              <img src="img/mainLogoWhite.png" alt="logo" class="logo">
+          </a>
+      </div>
       <nav>
           <ul class="nav-links">
               <li><a href="home-page.php">Home</a></li>
