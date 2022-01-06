@@ -34,6 +34,18 @@
             <div class="numbertext">3 / 3</div>
             <img src="img/putekite.jpg" style="width:100%">
         </div>
+        <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="img/puteki2.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">5 / 5</div>
+            <img src="img/mashini.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="img/sila.jpg" style="width:100%">
+        </div>
         <!-- Next and previous buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -50,6 +62,15 @@
             </div>
             <div class="column">
                 <img class="demo cursor" src="img/putekite.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="img/puteki2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Mountains and fjords">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="img/mashini.jpg" style="width:100%" onclick="currentSlide(5)" alt="Mountains and fjords">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="img/sila.jpg" style="width:100%" onclick="currentSlide(6)" alt="Mountains and fjords">
             </div>
         </div>
     </div>

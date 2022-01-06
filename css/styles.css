@@ -359,6 +359,21 @@ nav
 {
     background-color: rgba(0, 136, 169, 0.8);
 }
+.profile-image img{
+    width: 20%;
+    margin-left: 20%;
+    float: left;
+}
+.profile-data{
+    float: right;
+    margin-right: 40%;
+    margin-top: 100px;
+    font-size: x-large;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.profile-data p{
+    padding: 10px;
+}
 .footer{
     position: fixed;
     background-color: black;

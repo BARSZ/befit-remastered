@@ -23,7 +23,7 @@
             <li>3 workouts with a Personal trainer</li>
             <li>5 Spa treatments</li>
             <li>Free mineral water and towel</li>
-            <li class="grey"><a href="Contacts.php" class="signup-button"><button>Sign Up</button></a></li>
+            <li class="grey"><a href="#" class="signup-button"><button>Sign Up</button></a></li>
         </ul>
         <br>
         <ul class="price">
@@ -33,7 +33,7 @@
             <li>10 workouts with a Personal trainer</li>
             <li>15 Spa treatments</li>
             <li>Free mineral water, towel and a protein bar</li>
-            <li class="grey"><a href="Contacts.php" class="signup-button"><button>Sign Up</button></a></li>
+            <li class="grey"><a href="#" class="signup-button"><button>Sign Up</button></a></li>
         </ul>
     </div>
 </body>
