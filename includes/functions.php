@@ -1,5 +1,5 @@
 <?php
-
+include_once "get-info.php";
 function emptyInputSignUp($username, $password, $email, $name, $age, $gender, $dateOfBirth)
 {
     $result = false;
@@ -99,5 +99,68 @@ function loginUser($conn, $username, $password)
         $_SESSION["name"] = $usernameExists["name"];
         header("Location: ../home-page.php?login=success");
         exit();
+    }
+}
+function updateUser($conn, $id, $passwordEntered, $newEmail, $newName, $newAge, $newPassword)
+{
+    $passwordHashed = getHashedPassword($conn, $id);
+    $checkPasswordMatch = password_verify($passwordEntered, $passwordHashed);
+    $newPasswordHashed = password_hash($newPassword, PASSWORD_DEFAULT);
+
+    if ($checkPasswordMatch === true) {
+        $sql = "UPDATE clients SET name = ?, age = ?, email = ?, password = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sissi", $newName, $newAge, $newEmail, $newPasswordHashed, $id);
+        $stmt->execute();
+    }
+    header("Location: ../profile-page.php");
+    exit();
+}
+function updatePassword($conn, $id, $passwordEntered, $newPassword)
+{
+    $passwordHashed = getHashedPassword($conn, $id);
+    $checkPasswordMatch = password_verify($passwordEntered, $passwordHashed);
+    $newPasswordHashed = password_hash($newPassword, PASSWORD_DEFAULT);
+    if ($checkPasswordMatch === true) {
+        $sql = "UPDATE clients SET password = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("si", $newPasswordHashed, $id);
+        $stmt->execute();
+    }
+}
+function updateName($conn, $id, $passwordEntered, $newName)
+{
+    $passwordHashed = getHashedPassword($conn, $id);
+    $checkPasswordMatch = password_verify($passwordEntered, $passwordHashed);
+
+    if ($checkPasswordMatch === true) {
+        $sql = "UPDATE clients SET name = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("si", $newName, $id);
+        $stmt->execute();
+    }
+}
+function updateAge($conn, $id, $passwordEntered, $newAge)
+{
+    $passwordHashed = getHashedPassword($conn, $id);
+    $checkPasswordMatch = password_verify($passwordEntered, $passwordHashed);
+
+    if ($checkPasswordMatch === true) {
+        $sql = "UPDATE clients SET age = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ii", $newAge, $id);
+        $stmt->execute();
+    }
+}
+function updateEmail($conn, $id, $passwordEntered, $newEmail)
+{
+    $passwordHashed = getHashedPassword($conn, $id);
+    $checkPasswordMatch = password_verify($passwordEntered, $passwordHashed);
+
+    if ($checkPasswordMatch === true) {
+        $sql = "UPDATE clients SET email = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("si", $newEmail, $id);
+        $stmt->execute();
     }
 }
