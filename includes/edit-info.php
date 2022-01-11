@@ -12,6 +12,7 @@ if (isset($_POST["edit-details-button"])) {
     if ($_POST["name"]  != "") {
         $newName = $_POST["name"];
         updateName($conn, $userid, $passwordEntered, $newName);
+        $_SESSION["name"] =  $newName;
     }
     //Age
     if ($ageEntered != "") {

@@ -45,17 +45,17 @@ require_once 'includes/get-info.php';
             <label for="name"><b>New Name:</b></label>
             <input type="text" placeholder="Enter New Name" name="name">
 
-            <label for="age"><b>Change Age:</b></label>
+            <label for="age">Change Age:</label>
             <input type="text" placeholder="Enter New Age" name="age">
 
             <label for="email"><b>Change Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email">
+            <input type="text" placeholder="Enter New Email" name="email">
 
             <label for="password"><b>Change Password:</b></label>
             <input type="text" placeholder="Enter New Password" name="password">
 
             <label for="password2"><b>Repeat New Password:</b></label>
-            <input type="text" placeholder="Enter Email" name="password2">
+            <input type="text" placeholder="Repeat Password" name="password2">
 
             <label for="psw"><b>Password*</b></label>
             <input type="password" placeholder="Enter Password*" name="psw" required>
