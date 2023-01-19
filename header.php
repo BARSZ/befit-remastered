@@ -5,10 +5,10 @@
       </div>
       <nav>
           <ul class="nav-links">
-              <li><a href="home-page.php">Home</a></li>
-              <li><a href="gallery-page.php">Gallery</a></li>
-              <li><a href="prices-page.php">Prices</a></li>
-              <li><a href="profile-page.php">Profile: <?php echo $_SESSION["name"] ?></a></li>
+              <li><a href="home-page.php" title="Home Page">Home</a></li>
+              <li><a href="gallery-page.php" title="Gallery">Gallery</a></li>
+              <li><a href="prices-page.php" title="Prices">Prices</a></li>
+              <li><a href="profile-page.php" title="Profile">Profile: <?php echo $_SESSION["name"] ?></a></li>
           </ul>
       </nav>
       <div class="logout-button">

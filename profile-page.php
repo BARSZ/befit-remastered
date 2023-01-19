@@ -6,9 +6,14 @@ require_once 'includes/get-info.php';
 <html lang="en">
 
 <head>
-    <title>BeFit Home</title>
+    <title>BeFit Profile</title>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Profile page where the user can see his profile and change his data">
+    <meta name="keywords" content="profile, membership, data, photos, machines" />
+    <meta name="application-name" content="BeFit">
+
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 

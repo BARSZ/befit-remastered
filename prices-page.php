@@ -3,9 +3,14 @@
 <html lang="en">
 
 <head>
-    <title>BeFit Home</title>
+    <title>BeFit Prices</title>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gym prices page with different plans">
+    <meta name="keywords" content="prices, gym, membership, money, plan" />
+    <meta name="application-name" content="BeFit">
+    
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 

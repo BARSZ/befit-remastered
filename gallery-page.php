@@ -3,9 +3,17 @@
 <html lang="en">
 
 <head>
-    <title>BeFit Home</title>
+    <title>BeFit Gallery</title>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gallery page with latest photos from the gym">
+    <meta name="application-name" content="BeFit">
+
+    <meta property="og:title" content="Be Fit" />
+    <meta property="og:type" content="gym" />
+
+    <meta name="keywords" content="galley, gym, workout, photos, machines" />
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
@@ -55,22 +63,22 @@
         <!-- Thumbnail images -->
         <div class="row">
             <div class="column">
-                <img class="demo cursor" src="img/gymBenchesImg.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                <img class="demo cursor" src="img/gymBenchesImg.jpg" style="width:100%" onclick="currentSlide(1)" alt="Gym Benches">
             </div>
             <div class="column">
-                <img class="demo cursor" src="img/gymDumbellsImg.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                <img class="demo cursor" src="img/gymDumbellsImg.jpg" style="width:100%" onclick="currentSlide(2)" alt="Gym Dumbells">
             </div>
             <div class="column">
-                <img class="demo cursor" src="img/putekite.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                <img class="demo cursor" src="img/putekite.jpg" style="width:100%" onclick="currentSlide(3)" alt="Treadmills">
             </div>
             <div class="column">
-                <img class="demo cursor" src="img/puteki2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Mountains and fjords">
+                <img class="demo cursor" src="img/puteki2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Treadmills2">
             </div>
             <div class="column">
-                <img class="demo cursor" src="img/mashini.jpg" style="width:100%" onclick="currentSlide(5)" alt="Mountains and fjords">
+                <img class="demo cursor" src="img/mashini.jpg" style="width:100%" onclick="currentSlide(5)" alt="Gym machines">
             </div>
             <div class="column">
-                <img class="demo cursor" src="img/sila.jpg" style="width:100%" onclick="currentSlide(6)" alt="Mountains and fjords">
+                <img class="demo cursor" src="img/sila.jpg" style="width:100%" onclick="currentSlide(6)" alt="Power">
             </div>
         </div>
     </div>
